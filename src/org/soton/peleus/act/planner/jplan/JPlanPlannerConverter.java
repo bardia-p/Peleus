@@ -113,9 +113,32 @@ public class JPlanPlannerConverter implements PlannerConverter {
 		logger.info(startState.toString());
 		logger.info(goalState.toString());
 		logger.info(operators.toString());*/
+		
+		// Making it compliant with the new jason.
+		String[] parts = startState.toString().split(" & ");
+		StringBuilder output = new StringBuilder();
+		int outputCtr = 0;
+		for (int i = 0; i < parts.length; i++) {
+			if (parts[i].contains("bel_no_source_self") | parts[i].contains("clear_source_self")){
+				continue;
+			}
+			if (outputCtr >= 1) output.append(" & ");
+			outputCtr++;
+			output.append(parts[i]);
+		}
+
+		String firstState = output.toString();
+
+		if (!firstState.contains("init:")){
+			firstState = "init:" + firstState;
+		}
+		
+
+		System.out.println("THE START STATE: " + firstState);
+		
 		try {
 			factStream.write(objects.toString().getBytes());
-			factStream.write(startState.toString().getBytes());
+			factStream.write(firstState.getBytes());
 			factStream.write(goalState.toString().getBytes());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -123,6 +146,7 @@ public class JPlanPlannerConverter implements PlannerConverter {
 			return false;
 		}
 		
+		System.out.println("FACT STREAM: " + factStream);
 		/*logger.fine("Operators:");
 		logger.fine(operators.toString());
 		
