@@ -317,18 +317,11 @@ public class plan extends DefaultInternalAction {
 			return false;
 		}
 
-		if(plannerName.equals("prp")) {
-			logger.info("Contingency plan cannot be converted.");
+		logger.info("Converting plan...");
+		Plan plan = convertPlan(makeGeneric, makeAtomic, useRemote);
 
-			executeNewContingencyPlan(plannerConverter.getContingencyPlan(), ts);
-
-		} else {
-			logger.info("Converting plan...");
-			Plan plan = convertPlan(makeGeneric, makeAtomic, useRemote);
-
-			logger.info("Executing plan...");
-			executeNewPlan(plan, ts);
-		}
+		logger.info("Executing plan...");
+		executeNewPlan(plan, ts);
 
 
 		return true;
