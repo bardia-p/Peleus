@@ -1,0 +1,24 @@
+
+If holds: var0:0 var3:0 var1:0 var2:0 var4:0
+Execute: goal / SC / d=0
+
+If holds: var11:3 var9:0 var0:0 var1:0
+Execute: suck3 c3 c2 c4 / SC / d=1
+
+If holds: var11:2 var9:0 var0:0 var1:0
+Execute: right c2 c3 / SC / d=2
+
+If holds: var11:3 var0:0 var3:0 var1:0
+Execute: suck4 c3 / SC / d=2
+
+If holds: var11:1 var9:0 var0:0 var1:0
+Execute: right c1 c2 / SC / d=3
+
+If holds: var11:0 var9:0 var0:0 var1:0
+Execute: right c0 c1 / SC / d=4
+
+If holds: var11:0 var6:0 var9:0
+Execute: suck2 c0 / SC / d=5
+
+If holds: var11:0 var9:0 var0:0
+Execute: suck4 c0 / SC / d=6

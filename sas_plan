@@ -1,0 +1,5 @@
+(suck2_DETDUP_0 c0)
+(right c0 c1)
+(right c1 c2)
+(right c2 c3)
+(suck3_DETDUP_0 c3 c2 c4)

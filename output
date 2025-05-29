@@ -1,0 +1,758 @@
+begin_version
+3
+end_version
+begin_metric
+0
+end_metric
+12
+begin_variable
+var11
+-1
+5
+Atom pos(c0)
+Atom pos(c1)
+Atom pos(c2)
+Atom pos(c3)
+Atom pos(c4)
+end_variable
+begin_variable
+var6
+-1
+2
+Atom dirty(c0)
+NegatedAtom dirty(c0)
+end_variable
+begin_variable
+var9
+-1
+2
+Atom dirty(c3)
+NegatedAtom dirty(c3)
+end_variable
+begin_variable
+var7
+-1
+2
+Atom dirty(c1)
+NegatedAtom dirty(c1)
+end_variable
+begin_variable
+var8
+-1
+2
+Atom dirty(c2)
+NegatedAtom dirty(c2)
+end_variable
+begin_variable
+var0
+-1
+2
+Atom clean(c0)
+NegatedAtom clean(c0)
+end_variable
+begin_variable
+var3
+-1
+2
+Atom clean(c3)
+NegatedAtom clean(c3)
+end_variable
+begin_variable
+var1
+-1
+2
+Atom clean(c1)
+NegatedAtom clean(c1)
+end_variable
+begin_variable
+var2
+-1
+2
+Atom clean(c2)
+NegatedAtom clean(c2)
+end_variable
+begin_variable
+var10
+-1
+2
+Atom dirty(c4)
+NegatedAtom dirty(c4)
+end_variable
+begin_variable
+var4
+-1
+2
+Atom clean(c4)
+NegatedAtom clean(c4)
+end_variable
+begin_variable
+var5
+-1
+2
+Atom clean(c48)
+NegatedAtom clean(c48)
+end_variable
+0
+begin_state
+0
+0
+0
+0
+0
+1
+1
+1
+1
+0
+1
+1
+end_state
+begin_goal
+5
+5 0
+6 0
+7 0
+8 0
+10 0
+end_goal
+23
+begin_operator
+left c1 c0
+0
+1
+0 0 1 0
+0
+end_operator
+begin_operator
+left c2 c1
+0
+1
+0 0 2 1
+0
+end_operator
+begin_operator
+left c3 c2
+0
+1
+0 0 3 2
+0
+end_operator
+begin_operator
+left c4 c3
+0
+1
+0 0 4 3
+0
+end_operator
+begin_operator
+right c0 c1
+0
+1
+0 0 0 1
+0
+end_operator
+begin_operator
+right c1 c2
+0
+1
+0 0 1 2
+0
+end_operator
+begin_operator
+right c2 c3
+0
+1
+0 0 2 3
+0
+end_operator
+begin_operator
+right c3 c4
+0
+1
+0 0 3 4
+0
+end_operator
+begin_operator
+suck1_DETDUP_0 c4
+1
+0 4
+3
+0 10 -1 0
+0 11 -1 0
+0 9 0 1
+0
+end_operator
+begin_operator
+suck1_DETDUP_1 c4
+1
+0 4
+2
+0 10 -1 0
+0 9 0 1
+0
+end_operator
+begin_operator
+suck2_DETDUP_0 c0
+1
+0 0
+4
+0 5 -1 0
+0 7 -1 0
+0 1 0 1
+0 3 -1 1
+0
+end_operator
+begin_operator
+suck2_DETDUP_1 c0
+1
+0 0
+2
+0 5 -1 0
+0 1 0 1
+0
+end_operator
+begin_operator
+suck3_DETDUP_0 c1 c0 c2
+1
+0 1
+6
+0 5 -1 0
+0 7 -1 0
+0 8 -1 0
+0 1 -1 1
+0 3 0 1
+0 4 -1 1
+0
+end_operator
+begin_operator
+suck3_DETDUP_0 c2 c1 c3
+1
+0 2
+6
+0 7 -1 0
+0 8 -1 0
+0 6 -1 0
+0 3 -1 1
+0 4 0 1
+0 2 -1 1
+0
+end_operator
+begin_operator
+suck3_DETDUP_0 c3 c2 c4
+1
+0 3
+6
+0 8 -1 0
+0 6 -1 0
+0 10 -1 0
+0 4 -1 1
+0 2 0 1
+0 9 -1 1
+0
+end_operator
+begin_operator
+suck3_DETDUP_1 c1 c0 c2
+1
+0 1
+2
+0 7 -1 0
+0 3 0 1
+0
+end_operator
+begin_operator
+suck3_DETDUP_1 c2 c1 c3
+1
+0 2
+2
+0 8 -1 0
+0 4 0 1
+0
+end_operator
+begin_operator
+suck3_DETDUP_1 c3 c2 c4
+1
+0 3
+2
+0 6 -1 0
+0 2 0 1
+0
+end_operator
+begin_operator
+suck4_DETDUP_0 c0
+1
+0 0
+2
+0 5 0 1
+0 1 -1 0
+0
+end_operator
+begin_operator
+suck4_DETDUP_0 c1
+1
+0 1
+2
+0 7 0 1
+0 3 -1 0
+0
+end_operator
+begin_operator
+suck4_DETDUP_0 c2
+1
+0 2
+2
+0 8 0 1
+0 4 -1 0
+0
+end_operator
+begin_operator
+suck4_DETDUP_0 c3
+1
+0 3
+2
+0 6 0 1
+0 2 -1 0
+0
+end_operator
+begin_operator
+suck4_DETDUP_0 c4
+1
+0 4
+2
+0 10 0 1
+0 9 -1 0
+0
+end_operator
+0
+begin_SG
+switch 5
+check 0
+switch 0
+check 0
+check 1
+18
+check 0
+check 0
+check 0
+check 0
+check 0
+check 0
+switch 7
+check 0
+switch 0
+check 0
+check 0
+check 1
+19
+check 0
+check 0
+check 0
+check 0
+check 0
+switch 8
+check 0
+switch 0
+check 0
+check 0
+check 0
+check 1
+20
+check 0
+check 0
+check 0
+check 0
+switch 6
+check 0
+switch 0
+check 0
+check 0
+check 0
+check 0
+check 1
+21
+check 0
+check 0
+check 0
+switch 10
+check 0
+switch 0
+check 0
+check 0
+check 0
+check 0
+check 0
+check 1
+22
+check 0
+check 0
+switch 1
+check 0
+switch 0
+check 0
+check 2
+10
+11
+check 0
+check 0
+check 0
+check 0
+check 0
+check 0
+switch 3
+check 0
+switch 0
+check 0
+check 0
+check 2
+12
+15
+check 0
+check 0
+check 0
+check 0
+check 0
+switch 4
+check 0
+switch 0
+check 0
+check 0
+check 0
+check 2
+13
+16
+check 0
+check 0
+check 0
+check 0
+switch 2
+check 0
+switch 0
+check 0
+check 0
+check 0
+check 0
+check 2
+14
+17
+check 0
+check 0
+check 0
+switch 9
+check 0
+switch 0
+check 0
+check 0
+check 0
+check 0
+check 0
+check 2
+8
+9
+check 0
+check 0
+switch 0
+check 0
+check 1
+4
+check 2
+0
+5
+check 2
+1
+6
+check 2
+2
+7
+check 1
+3
+check 0
+end_SG
+begin_DTG
+1
+1
+4
+0
+2
+0
+0
+0
+2
+5
+0
+2
+1
+1
+0
+3
+6
+0
+2
+2
+2
+0
+4
+7
+0
+1
+3
+3
+0
+end_DTG
+begin_DTG
+2
+1
+10
+1
+0 0
+1
+12
+2
+3 0
+0 1
+1
+0
+18
+2
+5 0
+0 0
+end_DTG
+begin_DTG
+2
+1
+14
+1
+0 3
+1
+13
+2
+4 0
+0 2
+1
+0
+21
+2
+6 0
+0 3
+end_DTG
+begin_DTG
+3
+1
+12
+1
+0 1
+1
+10
+2
+1 0
+0 0
+1
+13
+2
+4 0
+0 2
+1
+0
+19
+2
+7 0
+0 1
+end_DTG
+begin_DTG
+3
+1
+13
+1
+0 2
+1
+12
+2
+3 0
+0 1
+1
+14
+2
+2 0
+0 3
+1
+0
+20
+2
+8 0
+0 2
+end_DTG
+begin_DTG
+1
+1
+18
+1
+0 0
+2
+0
+10
+2
+1 0
+0 0
+0
+12
+2
+3 0
+0 1
+end_DTG
+begin_DTG
+1
+1
+21
+1
+0 3
+2
+0
+13
+2
+4 0
+0 2
+0
+14
+2
+2 0
+0 3
+end_DTG
+begin_DTG
+1
+1
+19
+1
+0 1
+3
+0
+10
+2
+1 0
+0 0
+0
+12
+2
+3 0
+0 1
+0
+13
+2
+4 0
+0 2
+end_DTG
+begin_DTG
+1
+1
+20
+1
+0 2
+3
+0
+12
+2
+3 0
+0 1
+0
+13
+2
+4 0
+0 2
+0
+14
+2
+2 0
+0 3
+end_DTG
+begin_DTG
+2
+1
+8
+1
+0 4
+1
+14
+2
+2 0
+0 3
+1
+0
+22
+2
+10 0
+0 4
+end_DTG
+begin_DTG
+1
+1
+22
+1
+0 4
+2
+0
+8
+2
+9 0
+0 4
+0
+14
+2
+2 0
+0 3
+end_DTG
+begin_DTG
+0
+1
+0
+8
+2
+9 0
+0 4
+end_DTG
+begin_CG
+11
+5 4
+7 5
+8 5
+6 4
+10 4
+11 1
+1 4
+3 5
+4 5
+2 4
+9 4
+3
+5 2
+7 1
+3 1
+5
+8 1
+6 2
+10 1
+4 1
+9 1
+5
+5 1
+7 2
+8 1
+1 1
+4 1
+5
+7 1
+8 2
+6 1
+3 1
+2 1
+1
+1 1
+1
+2 1
+1
+3 1
+1
+4 1
+2
+10 2
+11 1
+1
+9 1
+0
+end_CG

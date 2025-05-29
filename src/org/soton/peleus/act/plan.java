@@ -171,7 +171,7 @@ public class plan extends DefaultInternalAction {
 		logger.info("convertPlan("+makeGeneric+","+makeAtomic+","+makeRemote+")");
 
 		Plan plan = plannerConverter.getAgentSpeakPlan(makeGeneric);
-
+		
 		String atomic = "";
 		String remote = "";
 

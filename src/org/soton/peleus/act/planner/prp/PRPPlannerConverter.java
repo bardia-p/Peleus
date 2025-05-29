@@ -9,6 +9,7 @@ import org.soton.peleus.act.planner.prp.ProblemObjectsImpl;
 import org.soton.peleus.act.planner.prp.ProblemOperatorsImpl;
 import org.soton.peleus.act.planner.prp.StartStateImpl;
 
+import java.io.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -35,6 +36,7 @@ public class PRPPlannerConverter implements PlannerConverter {
 
     protected static int planNumber = 0;
 
+    protected StripsPlan outputPlan;
 
     @Override
     public void createPlanningProblem(List<Literal> beliefs, List<Plan> plans, List<Term> goals) {
@@ -86,7 +88,6 @@ public class PRPPlannerConverter implements PlannerConverter {
         }
 
         this.planName = "plan" + planNumber;
-        planNumber++;
 
     }
 
@@ -121,14 +122,12 @@ public class PRPPlannerConverter implements PlannerConverter {
 
             String[] command;
 
-            command = new String[]{
-                    "prp", "domain.pddl", "task.pddl", "--dump-policy", "2"
-                    //,"&&", "python2",  "../PLANNERS/prp/prp-scripts/translate_policy.py"
+	    command = new String[]{
+                    new File("lib/planner-for-relevant-policies/src/prp").getAbsolutePath(), "domain.pddl", "task.pddl", "--dump-policy", "2"
             };
 
             Process proc1 = new ProcessBuilder(command).start();
-
-            BufferedReader errorReader = new BufferedReader(new InputStreamReader(proc1.getErrorStream()));
+	    BufferedReader errorReader = new BufferedReader(new InputStreamReader(proc1.getErrorStream()));
             String errorLine = "";
             while ((errorLine = errorReader.readLine()) != null) {
                 logger.warning("***PRP GENERATION ERROR***: " + errorLine);
@@ -138,7 +137,7 @@ public class PRPPlannerConverter implements PlannerConverter {
             proc1.destroy();
 
             String[] command2 = new String[]{
-                    "python2", "../PLANNERS/prp/prp-scripts/translate_policy.py"
+                    "python2", new File("lib/planner-for-relevant-policies/prp-scripts").getAbsolutePath() + "/translate_policy.py"
             };
             Process proc = new ProcessBuilder(command2).start();
 
@@ -164,6 +163,19 @@ public class PRPPlannerConverter implements PlannerConverter {
             return false;
         }
 
+	try (FileInputStream fis = new FileInputStream("sas_plan");
+             ByteArrayOutputStream baos = new ByteArrayOutputStream()) {
+            byte[] buffer = new byte[1024];
+            int bytesRead;
+
+            while ((bytesRead = fis.read(buffer)) != -1) {
+                baos.write(buffer, 0, bytesRead);
+            }
+
+	    this.outputPlan = new StripsPlanImpl(baos.toByteArray());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return true;
     }
 
@@ -184,7 +196,7 @@ public class PRPPlannerConverter implements PlannerConverter {
 
     @Override
     public Plan getAgentSpeakPlan(boolean generic) {
-        return null;
+        return outputPlan.toAgentSpeakPlan(planNumber++);
     }
 
 

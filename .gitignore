@@ -2,4 +2,8 @@
 bin/
 .gradle/
 build/
-
+**/.obj/
+**/Makefile.depend
+**/preprocess
+**/downward-release
+**/__pycache__/
